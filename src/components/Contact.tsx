@@ -1,4 +1,4 @@
-import { email, links, person } from '../data/profile';
+import { email, links, resume } from '../data/profile';
 import { asset } from '../lib/asset';
 import { Section } from './ui/Section';
 import { Reveal } from './ui/Reveal';
@@ -65,16 +65,18 @@ export function Contact() {
         ))}
       </ul>
 
-      <Reveal delay={0.2}>
-        <a
-          href={asset(person.resume)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-flex rounded-full bg-gradient-to-r from-ember to-flame px-6 py-3 text-sm font-medium text-void transition-transform hover:scale-[1.03]"
-        >
-          Download résumé (PDF)
-        </a>
-      </Reveal>
+      {resume && (
+        <Reveal delay={0.2}>
+          <a
+            href={asset(resume)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex rounded-full bg-gradient-to-r from-ember to-flame px-6 py-3 text-sm font-medium text-void transition-transform hover:scale-[1.03]"
+          >
+            Download résumé (PDF)
+          </a>
+        </Reveal>
+      )}
     </Section>
   );
 }

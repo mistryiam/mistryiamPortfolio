@@ -54,14 +54,28 @@ nothing, so ordinary updates never require touching a component.
 
 Assets in `public/`:
 
-| File                      | Used for                                   |
-| ------------------------- | ------------------------------------------ |
-| `Rohit_Mistry_Resume.pdf` | The résumé download button                 |
-| `rohit-mistry-640.jpg`    | Portrait (1× )                             |
-| `rohit-mistry-1280.jpg`   | Portrait (2×) and the social preview image |
-| `favicon.svg`             | Browser tab icon                           |
+| File                    | Used for                                   |
+| ----------------------- | ------------------------------------------ |
+| `rohit-mistry-640.jpg`  | Portrait (1×)                              |
+| `rohit-mistry-1280.jpg` | Portrait (2×) and the social preview image |
+| `favicon.svg`           | Browser tab icon                           |
 
-To swap the résumé, replace `public/Rohit_Mistry_Resume.pdf` and keep the name.
+### The résumé download
+
+There is no résumé PDF in `public/` right now, and `resume` in
+`src/data/profile.ts` is `null`, so the two download buttons (hero and contact)
+are not rendered at all. That pairing is deliberate: a button pointing at a file
+that is not there is worse than no button.
+
+To turn it back on, drop the PDF into `public/` and set the filename:
+
+```ts
+export const resume: string | null = 'Rohit_Mistry_Resume.pdf';
+```
+
+Before doing that, remember the file becomes public and search-indexable. Strip
+anything you would not publish — a phone number especially — and check the role
+history matches the site.
 
 ## Deployment
 

@@ -1,4 +1,4 @@
-import { formations, links, person } from '../data/profile';
+import { formations, links, person, resume } from '../data/profile';
 import { asset } from '../lib/asset';
 import { Reveal } from './ui/Reveal';
 
@@ -50,14 +50,16 @@ export function Hero() {
             >
               Get in touch
             </a>
-            <a
-              href={asset(person.resume)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ember/50 hover:text-ember"
-            >
-              Résumé ↗
-            </a>
+            {resume && (
+              <a
+                href={asset(resume)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ember/50 hover:text-ember"
+              >
+                Résumé ↗
+              </a>
+            )}
             <a
               href={links.github}
               target="_blank"
