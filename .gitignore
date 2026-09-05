@@ -1,0 +1,15 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+# Local Claude Code config (launch.json, settings.local.json)
+.claude/
+
+# Source assets kept locally only. The site is built from the processed copies
+# in public/ (Rohit_Mistry_Resume.pdf, rohit-mistry-640.jpg, rohit-mistry-1280.jpg),
+# which stay tracked because the build needs them.
+/Rohit_Mistry_2026.pdf
+/mistryiamPic.jpeg
