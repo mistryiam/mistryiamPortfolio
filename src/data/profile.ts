@@ -24,7 +24,7 @@ export const person = {
  * both branches typecheck — the buttons must never link at a file that is not
  * there, which is what happened when the PDF was removed but the links stayed.
  */
-export const resume: string | null = null;
+export const resume: string | null = 'Rohit_Mistry_Resume.pdf';
 
 /**
  * The address is stored in halves and joined at runtime so the complete string
