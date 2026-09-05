@@ -24,11 +24,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - run: npm ci
@@ -36,9 +36,13 @@ jobs:
       - run: npm run lint
       - run: npm run build
 
-      - uses: actions/configure-pages@v5
+      # Fails with "Get Pages site failed ... Not Found" until Pages is turned on
+      # under Settings -> Pages -> Source: GitHub Actions. The action's
+      # `enablement` input cannot do this for us: it needs a PAT with repo scope,
+      # not the default GITHUB_TOKEN.
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -51,4 +55,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

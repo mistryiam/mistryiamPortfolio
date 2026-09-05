@@ -78,7 +78,20 @@ its own repository:
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 3. Push to `main` (or run the Deploy workflow manually from the **Actions** tab).
 
-Until step 2 is done the deploy job fails with a "Pages is not enabled" error.
+Until step 2 is done, the build job fails at the `configure-pages` step with:
+
+```
+HttpError: Not Found
+Get Pages site failed. Please verify that the repository has Pages enabled and
+configured to build using GitHub Actions...
+```
+
+That error means only what it says: the Pages site does not exist yet. The
+action's `enablement` input looks like a fix but is not one here — it needs a PAT
+with `repo` scope, not the workflow's default `GITHUB_TOKEN`. Flipping the
+setting is the shorter path. Re-run the failed job from the Actions tab
+afterwards; no new commit is needed.
+
 The first deploy takes a couple of minutes; after that it is usually under one.
 
 ### Adding a custom domain later
