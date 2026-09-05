@@ -16,8 +16,15 @@ export const person = {
     large: 'rohit-mistry-1280.jpg',
     alt: 'Portrait of Rohit Mistry',
   },
-  resume: 'Rohit_Mistry_Resume.pdf',
 } as const;
+
+/**
+ * Filename of a résumé in public/, or null to hide the download buttons
+ * entirely. Kept separate from `person` so the type stays `string | null` and
+ * both branches typecheck — the buttons must never link at a file that is not
+ * there, which is what happened when the PDF was removed but the links stayed.
+ */
+export const resume: string | null = null;
 
 /**
  * The address is stored in halves and joined at runtime so the complete string
