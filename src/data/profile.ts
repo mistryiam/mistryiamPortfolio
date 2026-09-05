@@ -201,10 +201,8 @@ export const skills: readonly SkillGroup[] = [
 ];
 
 export const education = {
-  degree: 'Integrated M.Sc. in Physics',
   school: 'Indian Institute of Technology (IIT) Kharagpur',
   period: '2019 — 2024',
-  detail: 'CGPA 8.54 / 10',
 } as const;
 
 export type Achievement = { title: string; detail: string };
