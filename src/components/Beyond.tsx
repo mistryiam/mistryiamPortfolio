@@ -8,11 +8,9 @@ export function Beyond() {
       <Reveal>
         <div className="rounded-2xl border border-line bg-void-2/70 p-6 backdrop-blur-sm md:p-8">
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 className="text-xl font-semibold tracking-tight text-ink">{education.degree}</h3>
+            <h3 className="text-xl font-semibold tracking-tight text-ink">{education.school}</h3>
             <p className="font-mono text-xs text-faint">{education.period}</p>
           </div>
-          <p className="mt-1 text-sm text-ember">{education.school}</p>
-          <p className="mt-3 text-sm text-muted">{education.detail}</p>
         </div>
       </Reveal>
 
