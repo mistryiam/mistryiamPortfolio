@@ -5,11 +5,25 @@ import { Reveal } from './ui/Reveal';
 
 type Channel = { label: string; value: string; href: string; external?: boolean };
 
+/** The path a profile URL points at, e.g. "in/rohit-mistry-0563251a0". */
+function profilePath(url: string): string {
+  return new URL(url).pathname.replace(/^\/|\/$/g, '');
+}
+
+/**
+ * Labels are derived from the URLs rather than typed alongside them, so a
+ * changed profile link can't leave a stale handle displayed next to it.
+ */
 const channels: Channel[] = [
   { label: 'Email', value: email, href: `mailto:${email}` },
-  { label: 'LinkedIn', value: 'in/rohit-mistry', href: links.linkedin, external: true },
-  { label: 'GitHub', value: '@mistryiam', href: links.github, external: true },
-  { label: 'Instagram', value: '@mystech_404', href: links.instagram, external: true },
+  { label: 'LinkedIn', value: profilePath(links.linkedin), href: links.linkedin, external: true },
+  { label: 'GitHub', value: `@${profilePath(links.github)}`, href: links.github, external: true },
+  {
+    label: 'Instagram',
+    value: `@${profilePath(links.instagram)}`,
+    href: links.instagram,
+    external: true,
+  },
 ];
 
 export function Contact() {

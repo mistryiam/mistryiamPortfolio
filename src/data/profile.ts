@@ -28,7 +28,7 @@ const emailParts = ['rohitsphs.051604', 'gmail.com'];
 export const email = emailParts.join('@');
 
 export const links = {
-  linkedin: 'https://www.linkedin.com/in/rohit-mistry',
+  linkedin: 'https://www.linkedin.com/in/rohit-mistry-0563251a0/',
   github: 'https://github.com/mistryiam',
   instagram: 'https://www.instagram.com/mystech_404/',
 } as const;
