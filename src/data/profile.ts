@@ -44,7 +44,7 @@ export const about: readonly string[] = [
   'I am a backend engineer on the Fraud Prevention team at Blinkit. Quick commerce moves fast enough that fraud has to be caught in the same breath as the order — so my work is equal parts detection science and systems engineering: finding every shape fraud takes on the platform, building models that predict it automatically, and surfacing the linkages between accounts that look unrelated until you look at them together.',
   'A lot of that is pattern work at scale. Colluding accounts, repeated abuse of promotions, device and address graphs that quietly overlap — the signal is rarely in one record, it is in how records connect. I build the pipelines and services that turn that graph into decisions, and then I make those services survive production: scalable, fault tolerant, and fast enough to sit inline with real traffic.',
   'Before Blinkit I spent nearly two years at Dream11, writing core backend for the Creator’s Economy through the IPL 2025 launch and owning services through a world-record 16.1M-concurrency event. That is where I learned what high traffic actually means — 60M requests per minute, zero downtime, and no tolerance for a service that only works on a good day.',
-  'I studied Physics at IIT Kharagpur, which is mostly a story about liking hard problems. I still solve them for fun: 800+ DSA problems and a competitive programming habit I have not managed to quit.',
+  'My time at IIT Kharagpur is mostly a story about liking hard problems. I still solve them for fun: 800+ DSA problems and a competitive programming habit I have not managed to quit.',
 ];
 
 export type Stat = {
