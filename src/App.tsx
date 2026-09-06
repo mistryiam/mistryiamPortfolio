@@ -5,7 +5,9 @@ import { Stats } from './components/Stats';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
+import { Blog } from './components/Blog';
 import { Beyond } from './components/Beyond';
+import { hasPosts } from './blog/posts';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { useScrollProgress } from './hooks/useScrollProgress';
@@ -64,6 +66,9 @@ export default function App() {
         <About />
         <Experience />
         <Skills />
+        {/* With no published posts the section and its nav entry both vanish,
+            so the anchor can never point at nothing. */}
+        {hasPosts && <Blog />}
         <Beyond />
         <Contact />
       </main>
