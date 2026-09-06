@@ -46,6 +46,47 @@ path matters, since `base` in `vite.config.ts` matches the Pages URL.
 Always check `npm run preview` before pushing a change that touches assets — it
 is the only local check that catches a broken `base` path.
 
+## Writing a blog post
+
+Each post is a React component and gets its own **real static HTML page** at
+`/blog/<slug>/` — a genuine file with a 200 status, its own `<title>` and its own
+Open Graph tags, so shared links preview properly and search engines can index
+them. There is no client-side router.
+
+Two steps to publish:
+
+1. **Add the component** at `src/blog/posts/<slug>.tsx`, default-exporting the
+   post body. Start from `writing-your-first-post.tsx`, which shows every
+   supported element. Start headings at `<h2>` — the page renders the title as
+   the `<h1>`.
+2. **Add the metadata** to `src/blog/posts.meta.json`:
+
+   ```json
+   {
+     "slug": "kafka-consumer-lag",
+     "title": "What Consumer Lag Actually Tells You",
+     "date": "2026-09-20",
+     "summary": "One or two sentences. Used on the card, in the page description and in link previews.",
+     "tags": ["Kafka"],
+     "draft": true
+   }
+   ```
+
+The filename must match `slug` exactly — that pairing is what connects the two.
+
+**Drafts.** With `"draft": true` a post appears in `npm run dev` so you can
+preview it, and is excluded from the production build entirely: no page is
+generated and no card is listed. Set it to `false` when you want it live. If
+every post is a draft, the Blog section and its nav link disappear rather than
+render empty.
+
+Restart the dev server after editing `posts.meta.json` — it is read when Vite
+builds its config, not on every request.
+
+The generated `blog/` directory at the repo root is build output and gitignored;
+it is rebuilt from scratch each time, so renaming or deleting a post cannot leave
+a stale page behind.
+
 ## Editing the content
 
 Everything you would want to change — job titles, bullet points, stats, skills,

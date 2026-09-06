@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 import { person, sections } from '../data/profile';
+import { hasPosts } from '../blog/posts';
+
+// Kept in step with App: no published posts means no Blog section to link to.
+const visibleSections = sections.filter((section) => section.id !== 'blog' || hasPosts);
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +27,7 @@ export function Nav() {
       { rootMargin: '-45% 0px -50% 0px' },
     );
 
-    for (const { id } of sections) {
+    for (const { id } of visibleSections) {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     }
@@ -50,7 +54,7 @@ export function Nav() {
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">
-          {sections.map(({ id, label }) => (
+          {visibleSections.map(({ id, label }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
