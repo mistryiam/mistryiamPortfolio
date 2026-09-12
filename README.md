@@ -183,3 +183,21 @@ for a professional portfolio.
 - If WebGL is unavailable the canvas is never created and the page falls back to
   a static gradient background.
 - The three.js chunk is loaded lazily so the hero text is the first paint.
+
+## License
+
+The code is MIT — see [`LICENSE`](LICENSE). The personal content is not: the
+résumé, the portrait images, the blog writing and the biographical details in
+`src/data/profile.ts` are all rights reserved, and `LICENSE` lists them. Fork the
+site and swap in your own.
+
+Dependencies keep their own licenses, and nothing needs to be vendored or
+restated to satisfy them. React and three.js are MIT, and Vite preserves their
+`@license` headers through minification, so the copyright notices ship inside
+`dist/assets/*.js` on their own. Everything non-MIT in the tree — TypeScript and
+ESLint (Apache-2.0), lightningcss (MPL-2.0), caniuse-lite (CC-BY-4.0) — is a
+devDependency that never reaches a browser.
+
+Inter and JetBrains Mono are SIL OFL 1.1 but load from Google's CDN, so the font
+files are not redistributed here. Self-hosting the `.woff2` files would mean
+shipping the OFL text alongside them.

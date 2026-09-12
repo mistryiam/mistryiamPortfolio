@@ -1,0 +1,50 @@
+MIT License
+
+Copyright (c) 2026 Rohit Mistry
+
+This license covers the source code in this repository. It does not cover the
+personal content and media listed under "Excluded content" below, which remain
+all rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+----------------------------------------------------------------------------
+
+Excluded content
+
+The following are not part of "the Software" above. No permission is granted to
+copy, modify or redistribute them:
+
+  public/Rohit_Mistry_Resume.pdf   Résumé
+  public/rohit-mistry-640.jpg      Portrait photograph
+  public/rohit-mistry-1280.jpg     Portrait photograph
+  src/blog/posts/                  Blog post writing
+  src/data/profile.ts              Biographical content — the shape of the file
+                                   is reusable, the personal details are not
+
+Replace these with your own if you reuse this project. The code that reads them
+is covered by the MIT grant; only the content itself is reserved.
+
+----------------------------------------------------------------------------
+
+Third-party code
+
+Dependencies keep their own licenses. React, three.js and @react-three/fiber are
+MIT, and their copyright notices are preserved in the built bundles under dist/.
+Nothing here alters or supersedes them.
