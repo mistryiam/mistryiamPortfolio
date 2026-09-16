@@ -10,6 +10,7 @@ import { Beyond } from './components/Beyond';
 import { hasPosts } from './blog/posts';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { BackToTop } from './components/ui/BackToTop';
 import { useScrollProgress } from './hooks/useScrollProgress';
 
 // Three.js is the largest chunk by far. Loading it separately keeps the hero
@@ -76,6 +77,8 @@ export default function App() {
       <div className="relative z-10">
         <Footer />
       </div>
+
+      <BackToTop />
     </div>
   );
 }

@@ -19,10 +19,26 @@ standing in for AI, distributed systems, and systems at scale.
 | Animation | CSS transitions (no animation library)   |
 | Hosting   | GitHub Pages, deployed by GitHub Actions |
 
-No animation library and no drei: the only effects needed are a scroll-triggered
-fade and an adaptive-DPR helper, both a few lines each. Skipping them keeps the
-initial JS payload at roughly 54 kB gzipped, with three.js in a separate chunk
-that loads only after the page has painted.
+No animation library, no icon package and no drei: the effects needed are a
+scroll-triggered fade, an adaptive-DPR helper and a couple of dozen icons, all of
+them a few lines each. Skipping those dependencies keeps the initial JS payload
+at roughly 60 kB gzipped, with three.js in a separate chunk that loads only after
+the page has painted.
+
+### The design system
+
+`src/index.css` holds it all. Colours, fonts and the two easing curves are
+`@theme` tokens, so they are available as Tailwind utilities (`text-ember`,
+`ease-quint`). Below those, a small set of component classes in `@layer
+components` — `.card`, `.card-hover`, `.btn`, `.btn-primary`, `.btn-ghost`,
+`.chip` — are what every panel, button and tag on the site is built from. They
+live in a layer so a utility on the same element still wins.
+
+`.card-hover` is opt-in: surfaces you can act on lift and glow, containers do
+not, because lifting something unclickable promises an interaction that is not
+there. Pair it with `onPointerMove={trackSpotlight}` (`src/lib/spotlight.ts`) for
+the cursor-tracked highlight — that writes CSS variables straight to the node
+rather than going through React state.
 
 ## Local development
 
